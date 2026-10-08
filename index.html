@@ -6,8 +6,9 @@
   <meta name="color-scheme" content="light dark">
   <title>Planet Digger — Privacy Policy</title>
   <style>
+    @font-face { font-family: PlanetPixel; src: url("PlanetPixel.ttf") format("truetype"); font-weight: 100 900; }
     :root { color-scheme: light dark; }
-    body { font: -apple-system-body; font-family: system-ui, sans-serif; line-height: 1.65; max-width: 46rem; margin: auto; padding: 1.5rem; overflow-wrap: anywhere; }
+    body { font: 20px PlanetPixel, monospace; line-height: 1.65; max-width: 46rem; margin: auto; padding: 1.5rem; overflow-wrap: anywhere; }
     h1 { font-size: 1.8rem; line-height: 1.2; } h2 { font-size: 1.2rem; margin-top: 1.7rem; }
     a { color: #0867bc; } @media (prefers-color-scheme: dark) { a { color: #89c7ff; } }
   </style>
@@ -15,15 +16,29 @@
 <body>
 <main>
   <h1>Planet Digger Privacy Policy</h1>
-  <p>Effective date: September 22, 2026</p>
+  <p>Effective date: October 8, 2026</p>
   <p>Planet Digger is a single-player game provided by Aleksandr Otachkin. This policy explains how information is handled when you play the game, test it through TestFlight, visit this policy page, or contact the developer.</p>
 
   <h2>Information stored on your device</h2>
-  <p>The game stores your level, generated planet, inventory, digging energy, current attempt, enemy pursuit state, timers, and attempt statistics locally on your device so you can continue playing. The app does not send this gameplay information to a developer-operated server. Device backups managed by Apple may include app data according to your device and backup settings.</p>
+  <p>The game stores your level, generated planet, inventory, digging energy, current attempt, enemy pursuit state, timers, attempt statistics, and completed Endless result locally on your device so you can continue playing. Sound and difficulty settings and tutorial offer/completion flags are also stored locally. The tutorial uses a separate practice save and does not contribute to achievements or leaderboards. Unfinished attempts and Endless saves stay on the device; achievements, Competition progress and leaderboard information use CloudKit as described below. Device backups managed by Apple may include app data according to your device and backup settings.</p>
   <p>The app uses UserDefaults for its own local saves and system uptime to measure elapsed play time. It does not use these APIs to identify or track you.</p>
 
-  <h2>No accounts, advertising, or tracking</h2>
-  <p>Planet Digger does not require an account and does not include advertising, third-party analytics SDKs, or cross-app tracking. The game does not request access to your contacts, location, photos, camera, or microphone. We do not sell your personal information.</p>
+  <h2>Competition and iCloud</h2>
+  <p>Competition downloads published planet definitions and thumbnail images from Apple's CloudKit public database and keeps a local cache for offline use. Published planets are shared game content; the catalog does not contain players' personal progress.</p>
+  <p>When iCloud is available and enabled for this app, completed Competition planets and unlocked sizes sync through your private CloudKit database. The app uses the account identifier supplied by CloudKit to separate accounts and pending uploads. Wins are saved locally first and retried when the connection returns. Your unfinished attempt and Endless progress remain on the device.</p>
+  <p>Guest progress transfers automatically to the first iCloud account you sign into in this installation. Different iCloud accounts are kept separate. After that first transfer, any new guest progress stays separate. The app does not ask for your Apple Account password.</p>
+
+  <h2>Achievements</h2>
+  <p>Achievement progress is saved locally and syncs through your private iCloud database when available. This includes gameplay counters, discovered mechanics, completed planet and Endless level identifiers, earned achievement tiers and their dates. Random attempt identifiers make retries safe to sync without counting the same progress twice. These records are not published to other players. Detailed attempt checkpoints, such as mined cell coordinates, remain on your device.</p>
+  <p>Achievement profiles and pending uploads are separated by iCloud account. Guest achievements transfer once to the first confirmed account for this feature. Reset Endless does not delete the achievement collection.</p>
+
+  <h2>Public Competition leaderboards</h2>
+  <p>If you choose a leaderboard nickname while signed into iCloud, the app publishes that nickname and your best completion time for each played planet version in the CloudKit public database. Other players and the developer can read these records. CloudKit associates them with a pseudonymous account identifier; the app does not request your real name, email address, or Apple Account password for this feature. Please avoid putting personal or contact information in your nickname.</p>
+  <p>Completion times include pauses and time outside the app after the memorization period. Results waiting for a nickname or a connection remain stored locally for the same account, and uploads retry automatically. You can choose Not Now to keep playing without publishing until you set a nickname. Guest results are not automatically published when guest progress transfers to iCloud. Viewing leaderboards does not require an iCloud account.</p>
+  <p>Your public profile and best times can remain available after uninstalling the game or resetting Endless. To request removal of public leaderboard information, use the contact address below. Other devices may retain cached copies until they refresh.</p>
+
+  <h2>No advertising or tracking</h2>
+  <p>Endless and available cached Competition planets can be played without an iCloud account. Planet Digger does not include advertising, third-party analytics SDKs, or cross-app tracking. The game does not request access to your contacts, location, photos, camera, or microphone. We do not sell your personal information.</p>
 
   <h2>TestFlight and Apple diagnostics</h2>
   <p>If you install the beta through TestFlight, Apple processes testing information and makes certain information available to the developer, such as installation and session information, crashes, device and operating system details, and feedback you submit. Feedback may include screenshots and your email address if you provide it. We use this information only to investigate problems, improve the game, and respond to you.</p>
@@ -35,12 +50,12 @@
   <p>We do not share support messages or tester feedback for advertising or unrelated purposes. Service providers process information as needed to provide the services described above. Information may also be disclosed where required by law.</p>
 
   <h2>Retention, deletion, and your choices</h2>
-  <p>Local game progress remains until you reset it or delete the app. To reset progress, reopen the app, choose Settings on the main menu, then Reset Progress and confirm. Deleting the app removes its local data; offloading the app can retain data. Backups are managed separately through Apple's settings.</p>
+  <p>Local progress remains until you delete the app or use an applicable reset. Settings → Reset Endless clears only Endless progress; it does not reset Competition, the achievement collection or their iCloud records. Deleting the app removes local data, but synced Competition progress and the achievement collection may return from iCloud on reinstall. Cloud storage and device backups are managed separately through Apple's settings; offloading can retain local data.</p>
   <p>We keep support messages and any tester feedback retained by us only as long as needed to address the issue, maintain the game, or meet applicable legal obligations. You can request access, correction, or deletion of information held by the developer by emailing the address below. We may need to verify that the request concerns your information. We cannot remotely access or delete your local game save.</p>
   <p>You can stop beta testing through TestFlight and manage diagnostic sharing in your device settings. Information held independently by Apple, GitHub, or Google is governed by their policies and retention practices. For Apple data requests, see <a href="https://privacy.apple.com/">Apple Data and Privacy</a>.</p>
 
   <h2>Children</h2>
-  <p>The game does not ask children to submit personal information. If you believe a child has sent personal information to the developer through a support message or tester feedback, contact us so we can address it and delete information where appropriate.</p>
+  <p>The game does not ask for a real name or contact information to play. A leaderboard nickname is public; children should not include personal information in it. If you believe a child has sent personal information to the developer through a support message or tester feedback, contact us so we can address it and delete information where appropriate.</p>
 
   <h2>Changes and contact</h2>
   <p>If the game's data practices change, this policy will be updated with a new effective date. The public version is available at <a href="https://otachkin.github.io/planet-digger-privacy/">otachkin.github.io/planet-digger-privacy/</a>.</p>
